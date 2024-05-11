@@ -21,33 +21,35 @@ data:
     \n\n#line 1 \"cplib/template.hpp\"\n#include <bits/stdc++.h>\n#include <atcoder/all>\n\
     \nusing namespace std;\nusing namespace atcoder;\n\ntypedef long long ll;\ntypedef\
     \ long double ld;\ntypedef vector<int> vi;\ntypedef vector<ll> vll;\ntypedef vector<ld>\
-    \ vld;\ntypedef vector<vi> vvi;\ntypedef vector<vll> vvll;\n\ntemplate <class\
-    \ T> using Vec = vector<T>;\ntemplate <class T> using Graph = Vec<Vec<T>>;\n\n\
-    #define _overload3(_1,_2,_3,name,...) name\n#define _rep(i,n) repi(i,0,n)\n#define\
-    \ repi(i,a,b) for(int i=int(a);i<int(b);++i)\n#define rep(...) _overload3(__VA_ARGS__,repi,_rep,)(__VA_ARGS__)\n\
-    #define _rrep(i,n) rrepi(i,n-1,-1)\n#define rrepi(i,a,b) for(int i=int(a);i>int(b);--i)\n\
-    #define rrep(...) _overload3(__VA_ARGS__,rrepi,_rrep)(__VA_ARGS__)\n\n#define\
-    \ all(x) (x).begin(),(x).end()\n#define SORT(x) sort(all(x))\n#define REVERSE(x)\
-    \ reverse(all(x))\n\ntemplate<class T>bool chmax(T &a, const T &b) { if (a<b)\
-    \ { a=b; return 1; } return 0; }\ntemplate<class T>bool chmin(T &a, const T &b)\
-    \ { if (b<a) { a=b; return 1; } return 0; }\n\nostream& operator<<(ostream& os,\
-    \ const modint998244353& a) { return os << a.val(); }\nostream& operator<<(ostream&\
-    \ os, const modint1000000007& a) { return os << a.val(); }\n#line 1 \"cplib/math/fps.hpp\"\
-    \ntemplate<typename mint>\nstruct FormalPowerSeries: vector<mint> {\n    using\
-    \ fps = FormalPowerSeries;\n    using vector<mint>::vector;\n\n    fps& operator+=(const\
+    \ vld;\ntypedef vector<vi> vvi;\ntypedef vector<vll> vvll;\n\n#define _overload3(_1,_2,_3,name,...)\
+    \ name\n#define _rep(i,n) repi(i,0,n)\n#define repi(i,a,b) for(int i=int(a);i<int(b);++i)\n\
+    #define rep(...) _overload3(__VA_ARGS__,repi,_rep,)(__VA_ARGS__)\n#define _rrep(i,n)\
+    \ rrepi(i,n-1,-1)\n#define rrepi(i,a,b) for(int i=int(a);i>int(b);--i)\n#define\
+    \ rrep(...) _overload3(__VA_ARGS__,rrepi,_rrep)(__VA_ARGS__)\n\n#define all(x)\
+    \ (x).begin(),(x).end()\n#define SORT(x) sort(all(x))\n#define REVERSE(x) reverse(all(x))\n\
+    \ntemplate<class T>bool chmax(T &a, const T &b) { if (a<b) { a=b; return 1; }\
+    \ return 0; }\ntemplate<class T>bool chmin(T &a, const T &b) { if (b<a) { a=b;\
+    \ return 1; } return 0; }\n\nostream& operator<<(ostream& os, const modint998244353&\
+    \ a) { return os << a.val(); }\nostream& operator<<(ostream& os, const modint1000000007&\
+    \ a) { return os << a.val(); }\n\ntemplate<class T> istream& operator>>(istream&\
+    \ is, vector<T>& vec) { for (T& x : vec) is >> x; return is; }\ntemplate<class\
+    \ T> ostream& operator<<(ostream& os, const vector<T>& vec) { for (const T& x\
+    \ : vec) os << x << ' '; return os; }\n#line 1 \"cplib/math/fps.hpp\"\ntemplate<typename\
+    \ mint>\nstruct FormalPowerSeries: vector<mint> {\n    using fps = FormalPowerSeries;\n\
+    \    using vector<mint>::vector;\n\n    fps& operator+=(const fps& g) {\n    \
+    \    if (this->size() < g.size()) this->resize(g.size());\n        for (int i\
+    \ = 0; i < (int)g.size(); i++) (*this)[i] += g[i];\n        return *this;\n  \
+    \  }\n    fps& operator+=(const mint& a) {\n        if (this->empty()) this->resize(1);\n\
+    \        (*this)[0] += a;\n        return *this;\n    }\n    fps& operator-=(const\
     \ fps& g) {\n        if (this->size() < g.size()) this->resize(g.size());\n  \
-    \      for (int i = 0; i < g.size(); i++) (*this)[i] += g[i];\n        return\
-    \ *this;\n    }\n    fps& operator+=(const mint& a) {\n        if (this->empty())\
-    \ this->resize(1);\n        (*this)[0] += a;\n        return *this;\n    }\n \
-    \   fps& operator-=(const fps& g) {\n        if (this->size() < g.size()) this->resize(g.size());\n\
-    \        for (int i = 0; i < g.size(); i++) (*this)[i] -= g[i];\n        return\
+    \      for (int i = 0; i < (int)g.size(); i++) (*this)[i] -= g[i];\n        return\
     \ *this;\n    }\n    fps& operator-=(const mint& a) {\n        if (this->empty())\
     \ this->resize(1);\n        (*this)[0] -= a;\n        return *this;\n    }\n \
     \   fps& operator*=(const fps& g) {\n        vector<mint> h = convolution(*this,\
     \ g);\n        return *this = fps(h.begin(), h.end());\n    }\n    fps& operator*=(const\
-    \ mint& a) {\n        for (int i = 0; i < this->size(); i++) (*this)[i] *= a;\n\
-    \        return *this;\n    }\n\n    fps operator+(const fps& g) const { return\
-    \ fps(*this) += g; }\n    fps operator+(const mint& a) const { return fps(*this)\
+    \ mint& a) {\n        for (int i = 0; i < (int)this->size(); i++) (*this)[i] *=\
+    \ a;\n        return *this;\n    }\n\n    fps operator+(const fps& g) const {\
+    \ return fps(*this) += g; }\n    fps operator+(const mint& a) const { return fps(*this)\
     \ += a; }\n    fps operator-(const fps& g) const { return fps(*this) -= g; }\n\
     \    fps operator-(const mint& a) const { return fps(*this) -= a; }\n    fps operator-()\
     \ const { return fps(*this) *= -1; }\n    fps operator*(const fps& g) const {\
@@ -75,7 +77,7 @@ data:
   isVerificationFile: true
   path: verify/math/fps.test.cpp
   requiredBy: []
-  timestamp: '2024-05-05 15:00:59+09:00'
+  timestamp: '2024-05-11 16:01:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/math/fps.test.cpp

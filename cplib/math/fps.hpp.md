@@ -14,18 +14,18 @@ data:
   bundledCode: "#line 1 \"cplib/math/fps.hpp\"\ntemplate<typename mint>\nstruct FormalPowerSeries:\
     \ vector<mint> {\n    using fps = FormalPowerSeries;\n    using vector<mint>::vector;\n\
     \n    fps& operator+=(const fps& g) {\n        if (this->size() < g.size()) this->resize(g.size());\n\
-    \        for (int i = 0; i < g.size(); i++) (*this)[i] += g[i];\n        return\
-    \ *this;\n    }\n    fps& operator+=(const mint& a) {\n        if (this->empty())\
+    \        for (int i = 0; i < (int)g.size(); i++) (*this)[i] += g[i];\n       \
+    \ return *this;\n    }\n    fps& operator+=(const mint& a) {\n        if (this->empty())\
     \ this->resize(1);\n        (*this)[0] += a;\n        return *this;\n    }\n \
     \   fps& operator-=(const fps& g) {\n        if (this->size() < g.size()) this->resize(g.size());\n\
-    \        for (int i = 0; i < g.size(); i++) (*this)[i] -= g[i];\n        return\
-    \ *this;\n    }\n    fps& operator-=(const mint& a) {\n        if (this->empty())\
+    \        for (int i = 0; i < (int)g.size(); i++) (*this)[i] -= g[i];\n       \
+    \ return *this;\n    }\n    fps& operator-=(const mint& a) {\n        if (this->empty())\
     \ this->resize(1);\n        (*this)[0] -= a;\n        return *this;\n    }\n \
     \   fps& operator*=(const fps& g) {\n        vector<mint> h = convolution(*this,\
     \ g);\n        return *this = fps(h.begin(), h.end());\n    }\n    fps& operator*=(const\
-    \ mint& a) {\n        for (int i = 0; i < this->size(); i++) (*this)[i] *= a;\n\
-    \        return *this;\n    }\n\n    fps operator+(const fps& g) const { return\
-    \ fps(*this) += g; }\n    fps operator+(const mint& a) const { return fps(*this)\
+    \ mint& a) {\n        for (int i = 0; i < (int)this->size(); i++) (*this)[i] *=\
+    \ a;\n        return *this;\n    }\n\n    fps operator+(const fps& g) const {\
+    \ return fps(*this) += g; }\n    fps operator+(const mint& a) const { return fps(*this)\
     \ += a; }\n    fps operator-(const fps& g) const { return fps(*this) -= g; }\n\
     \    fps operator-(const mint& a) const { return fps(*this) -= a; }\n    fps operator-()\
     \ const { return fps(*this) *= -1; }\n    fps operator*(const fps& g) const {\
@@ -40,18 +40,18 @@ data:
   code: "template<typename mint>\nstruct FormalPowerSeries: vector<mint> {\n    using\
     \ fps = FormalPowerSeries;\n    using vector<mint>::vector;\n\n    fps& operator+=(const\
     \ fps& g) {\n        if (this->size() < g.size()) this->resize(g.size());\n  \
-    \      for (int i = 0; i < g.size(); i++) (*this)[i] += g[i];\n        return\
+    \      for (int i = 0; i < (int)g.size(); i++) (*this)[i] += g[i];\n        return\
     \ *this;\n    }\n    fps& operator+=(const mint& a) {\n        if (this->empty())\
     \ this->resize(1);\n        (*this)[0] += a;\n        return *this;\n    }\n \
     \   fps& operator-=(const fps& g) {\n        if (this->size() < g.size()) this->resize(g.size());\n\
-    \        for (int i = 0; i < g.size(); i++) (*this)[i] -= g[i];\n        return\
-    \ *this;\n    }\n    fps& operator-=(const mint& a) {\n        if (this->empty())\
+    \        for (int i = 0; i < (int)g.size(); i++) (*this)[i] -= g[i];\n       \
+    \ return *this;\n    }\n    fps& operator-=(const mint& a) {\n        if (this->empty())\
     \ this->resize(1);\n        (*this)[0] -= a;\n        return *this;\n    }\n \
     \   fps& operator*=(const fps& g) {\n        vector<mint> h = convolution(*this,\
     \ g);\n        return *this = fps(h.begin(), h.end());\n    }\n    fps& operator*=(const\
-    \ mint& a) {\n        for (int i = 0; i < this->size(); i++) (*this)[i] *= a;\n\
-    \        return *this;\n    }\n\n    fps operator+(const fps& g) const { return\
-    \ fps(*this) += g; }\n    fps operator+(const mint& a) const { return fps(*this)\
+    \ mint& a) {\n        for (int i = 0; i < (int)this->size(); i++) (*this)[i] *=\
+    \ a;\n        return *this;\n    }\n\n    fps operator+(const fps& g) const {\
+    \ return fps(*this) += g; }\n    fps operator+(const mint& a) const { return fps(*this)\
     \ += a; }\n    fps operator-(const fps& g) const { return fps(*this) -= g; }\n\
     \    fps operator-(const mint& a) const { return fps(*this) -= a; }\n    fps operator-()\
     \ const { return fps(*this) *= -1; }\n    fps operator*(const fps& g) const {\
@@ -67,7 +67,7 @@ data:
   isVerificationFile: false
   path: cplib/math/fps.hpp
   requiredBy: []
-  timestamp: '2024-05-05 15:00:59+09:00'
+  timestamp: '2024-05-11 16:01:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/math/fps.test.cpp

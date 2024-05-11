@@ -38,11 +38,6 @@ data:
     typedef vector<vll> vvll;
 
 
-    template <class T> using Vec = vector<T>;
-
-    template <class T> using Graph = Vec<Vec<T>>;
-
-
     #define _overload3(_1,_2,_3,name,...) name
 
     #define _rep(i,n) repi(i,0,n)
@@ -77,6 +72,13 @@ data:
 
     ostream& operator<<(ostream& os, const modint1000000007& a) { return os << a.val();
     }
+
+
+    template<class T> istream& operator>>(istream& is, vector<T>& vec) { for (T& x
+    : vec) is >> x; return is; }
+
+    template<class T> ostream& operator<<(ostream& os, const vector<T>& vec) { for
+    (const T& x : vec) os << x << '' ''; return os; }
 
     '
   code: '#include <bits/stdc++.h>
@@ -104,11 +106,6 @@ data:
     typedef vector<vll> vvll;
 
 
-    template <class T> using Vec = vector<T>;
-
-    template <class T> using Graph = Vec<Vec<T>>;
-
-
     #define _overload3(_1,_2,_3,name,...) name
 
     #define _rep(i,n) repi(i,0,n)
@@ -142,12 +139,19 @@ data:
     }
 
     ostream& operator<<(ostream& os, const modint1000000007& a) { return os << a.val();
-    }'
+    }
+
+
+    template<class T> istream& operator>>(istream& is, vector<T>& vec) { for (T& x
+    : vec) is >> x; return is; }
+
+    template<class T> ostream& operator<<(ostream& os, const vector<T>& vec) { for
+    (const T& x : vec) os << x << '' ''; return os; }'
   dependsOn: []
   isVerificationFile: false
   path: cplib/template.hpp
   requiredBy: []
-  timestamp: '2024-05-05 15:00:59+09:00'
+  timestamp: '2024-05-11 16:01:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/math/fps.test.cpp
