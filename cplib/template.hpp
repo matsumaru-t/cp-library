@@ -12,9 +12,6 @@ typedef vector<ld> vld;
 typedef vector<vi> vvi;
 typedef vector<vll> vvll;
 
-template <class T> using Vec = vector<T>;
-template <class T> using Graph = Vec<Vec<T>>;
-
 #define _overload3(_1,_2,_3,name,...) name
 #define _rep(i,n) repi(i,0,n)
 #define repi(i,a,b) for(int i=int(a);i<int(b);++i)
@@ -32,3 +29,6 @@ template<class T>bool chmin(T &a, const T &b) { if (b<a) { a=b; return 1; } retu
 
 ostream& operator<<(ostream& os, const modint998244353& a) { return os << a.val(); }
 ostream& operator<<(ostream& os, const modint1000000007& a) { return os << a.val(); }
+
+template<class T> istream& operator>>(istream& is, vector<T>& vec) { for (T& x : vec) is >> x; return is; }
+template<class T> ostream& operator<<(ostream& os, const vector<T>& vec) { for (const T& x : vec) os << x << ' '; return os; }

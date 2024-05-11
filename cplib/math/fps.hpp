@@ -5,7 +5,7 @@ struct FormalPowerSeries: vector<mint> {
 
     fps& operator+=(const fps& g) {
         if (this->size() < g.size()) this->resize(g.size());
-        for (int i = 0; i < g.size(); i++) (*this)[i] += g[i];
+        for (int i = 0; i < (int)g.size(); i++) (*this)[i] += g[i];
         return *this;
     }
     fps& operator+=(const mint& a) {
@@ -15,7 +15,7 @@ struct FormalPowerSeries: vector<mint> {
     }
     fps& operator-=(const fps& g) {
         if (this->size() < g.size()) this->resize(g.size());
-        for (int i = 0; i < g.size(); i++) (*this)[i] -= g[i];
+        for (int i = 0; i < (int)g.size(); i++) (*this)[i] -= g[i];
         return *this;
     }
     fps& operator-=(const mint& a) {
@@ -28,7 +28,7 @@ struct FormalPowerSeries: vector<mint> {
         return *this = fps(h.begin(), h.end());
     }
     fps& operator*=(const mint& a) {
-        for (int i = 0; i < this->size(); i++) (*this)[i] *= a;
+        for (int i = 0; i < (int)this->size(); i++) (*this)[i] *= a;
         return *this;
     }
 
