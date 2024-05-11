@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/math/fps.test.cpp
     title: verify/math/fps.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/structure/treap.test.cpp
+    title: verify/structure/treap.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -154,6 +157,7 @@ data:
   timestamp: '2024-05-11 16:01:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/structure/treap.test.cpp
   - verify/math/fps.test.cpp
 documentation_of: cplib/template.hpp
 layout: document
