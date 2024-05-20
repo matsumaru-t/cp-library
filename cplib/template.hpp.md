@@ -2,16 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/math/fps.test.cpp
-    title: verify/math/fps.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/structure/treap.test.cpp
-    title: verify/structure/treap.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: '#line 1 "cplib/template.hpp"
@@ -154,11 +148,9 @@ data:
   isVerificationFile: false
   path: cplib/template.hpp
   requiredBy: []
-  timestamp: '2024-05-11 16:01:21+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/structure/treap.test.cpp
-  - verify/math/fps.test.cpp
+  timestamp: '1970-01-01 00:00:00+00:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: cplib/template.hpp
 layout: document
 redirect_from:

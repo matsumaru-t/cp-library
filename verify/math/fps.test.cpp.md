@@ -1,22 +1,12 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: cplib/math/fps.hpp
-    title: cplib/math/fps.hpp
-  - icon: ':heavy_check_mark:'
-    path: cplib/template.hpp
-    title: cplib/template.hpp
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/inv_of_formal_power_series
-    links:
-    - https://judge.yosupo.jp/problem/inv_of_formal_power_series
+  _verificationStatusIcon: ':x:'
+  attributes: {}
   bundledCode: "#line 1 \"verify/math/fps.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/inv_of_formal_power_series\"\
     \n\n#line 1 \"cplib/template.hpp\"\n#include <bits/stdc++.h>\n#include <atcoder/all>\n\
     \nusing namespace std;\nusing namespace atcoder;\n\ntypedef long long ll;\ntypedef\
@@ -71,14 +61,12 @@ data:
     \n    int N;\n    cin >> N;\n    vi A(N);\n    rep(i, N) cin >> A[i];\n\n    fps\
     \ f(A.begin(), A.end());\n    f = f.inv(N);\n\n    for (auto &x: f) cout << x\
     \ << \" \";\n    cout << endl;\n}"
-  dependsOn:
-  - cplib/template.hpp
-  - cplib/math/fps.hpp
+  dependsOn: []
   isVerificationFile: true
   path: verify/math/fps.test.cpp
   requiredBy: []
-  timestamp: '2024-05-11 16:01:21+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '1970-01-01 00:00:00+00:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/math/fps.test.cpp
 layout: document
