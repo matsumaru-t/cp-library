@@ -3,8 +3,9 @@
 #include "../../cplib/template.hpp"
 #include "../../cplib/structure/treap.hpp"
 
-int op(int a, int b) { return min(a, b); }
-int e() { return 1000000005; }
+using S = int;
+S op(S a, S b) { return min(a, b); }
+S e() { return 1001001001; }
 
 int main() {
     int N, Q;
@@ -12,7 +13,7 @@ int main() {
     vector<int> a(N);
     cin >> a;
 
-    Treap<int, op, e> t(a);
+    Treap<S, op, e> t(a);
     rep(i, Q) {
         int l, r;
         cin >> l >> r;
