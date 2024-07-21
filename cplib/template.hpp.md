@@ -24,6 +24,10 @@ data:
 
     typedef long double ld;
 
+    typedef pair<int, int> pii;
+
+    typedef pair<ll, ll> pll;
+
     typedef vector<int> vi;
 
     typedef vector<ll> vll;
@@ -33,6 +37,8 @@ data:
     typedef vector<vi> vvi;
 
     typedef vector<vll> vvll;
+
+    typedef vector<string> vs;
 
 
     #define _overload3(_1,_2,_3,name,...) name
@@ -55,6 +61,22 @@ data:
     #define SORT(x) sort(all(x))
 
     #define REVERSE(x) reverse(all(x))
+
+
+    #define dump(x) cerr << #x << " = " << (x) << endl
+
+    #define print(x) cout << (x) << endl
+
+    #define yes(f) cout << ((f) ? "Yes" : "No") << endl
+
+
+    #define ge(v, x) (int)(lower_bound(all(v), x) - v.begin())
+
+    #define gt(v, x) (int)(upper_bound(all(v), x) - v.begin())
+
+    #define le(v, x) (int)(upper_bound(all(v), x) - v.begin())-1
+
+    #define lt(v, x) (int)(lower_bound(all(v), x) - v.begin())-1
 
 
     template<class T>bool chmax(T &a, const T &b) { if (a<b) { a=b; return 1; } return
@@ -92,6 +114,10 @@ data:
 
     typedef long double ld;
 
+    typedef pair<int, int> pii;
+
+    typedef pair<ll, ll> pll;
+
     typedef vector<int> vi;
 
     typedef vector<ll> vll;
@@ -101,6 +127,8 @@ data:
     typedef vector<vi> vvi;
 
     typedef vector<vll> vvll;
+
+    typedef vector<string> vs;
 
 
     #define _overload3(_1,_2,_3,name,...) name
@@ -123,6 +151,22 @@ data:
     #define SORT(x) sort(all(x))
 
     #define REVERSE(x) reverse(all(x))
+
+
+    #define dump(x) cerr << #x << " = " << (x) << endl
+
+    #define print(x) cout << (x) << endl
+
+    #define yes(f) cout << ((f) ? "Yes" : "No") << endl
+
+
+    #define ge(v, x) (int)(lower_bound(all(v), x) - v.begin())
+
+    #define gt(v, x) (int)(upper_bound(all(v), x) - v.begin())
+
+    #define le(v, x) (int)(upper_bound(all(v), x) - v.begin())-1
+
+    #define lt(v, x) (int)(lower_bound(all(v), x) - v.begin())-1
 
 
     template<class T>bool chmax(T &a, const T &b) { if (a<b) { a=b; return 1; } return

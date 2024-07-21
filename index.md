@@ -1,13 +1,11 @@
 ---
 data:
   libraryCategories:
-  - name: cplib/math
-    pages:
-    - icon: ':warning:'
-      path: cplib/math/fps.hpp
-      title: cplib/math/fps.hpp
   - name: cplib/structure
     pages:
+    - icon: ':warning:'
+      path: cplib/structure/swag.hpp
+      title: cplib/structure/swag.hpp
     - icon: ':warning:'
       path: cplib/structure/treap.hpp
       title: cplib/structure/treap.hpp
@@ -17,15 +15,10 @@ data:
       path: cplib/template.hpp
       title: cplib/template.hpp
   verificationCategories:
-  - name: verify/math
-    pages:
-    - icon: ':x:'
-      path: verify/math/fps.test.cpp
-      title: verify/math/fps.test.cpp
   - name: verify/structure
     pages:
     - icon: ':x:'
-      path: verify/structure/treap.test.cpp
-      title: verify/structure/treap.test.cpp
+      path: verify/structure/swag.test.cpp
+      title: verify/structure/swag.test.cpp
 layout: toppage
 ---
